@@ -1,0 +1,44 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local databases and backups
+*.mdf
+*.ldf
+*.bak
+*.sql.bak
+
+# Private operational data
+data/
+*.csv
+*.xlsx
+*.xls
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test and coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
