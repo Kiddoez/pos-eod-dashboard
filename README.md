@@ -75,8 +75,6 @@ pos-eod-dashboard/
 └── README.md
 ```
 
-*This is a representative structure. Verify the actual folders and files before finalizing this section.*
-
 ## Database Design
 
 The application uses Microsoft SQL Server Express as its relational database. The `PosEodPortfolio` database contains three main tables, three staging tables, and six analytical views.
@@ -180,6 +178,16 @@ export DB_DRIVER='ODBC Driver 18 for SQL Server'
 Replace the example server name with your own SQL Server instance. The database, required tables, and views must already exist, and Windows Trusted Connection authentication must be configured.
 
 Do not commit `.env` files containing local settings or credentials.
+
+For Windows PowerShell, configure the variables with:
+
+```powershell
+$env:DB_SERVER = "localhost\SQLEXPRESS"
+$env:DB_NAME = "PosEodPortfolio"
+$env:DB_DRIVER = "ODBC Driver 18 for SQL Server"
+```
+
+Replace the example server name with your own SQL Server instance. Set these variables in the same PowerShell session used to run the dashboard.
 
 ### 5. Run the dashboard
 
