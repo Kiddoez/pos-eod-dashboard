@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine import URL
 
 
-SERVER = os.getenv("DB_SERVER", r"TOPE\SQLEXPRESS")
+SERVER = os.getenv("DB_SERVER")
 DATABASE = os.getenv("DB_NAME", "PosEodPortfolio")
 DRIVER = os.getenv(
     "DB_DRIVER",

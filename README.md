@@ -159,11 +159,27 @@ python -m pip install -r requirements.txt
 
 ### 4. Configure the database connection
 
-Configure the application to connect to the local SQL Server instance and the `PosEodPortfolio` database.
+The application reads its database settings from environment variables.
 
-The current local environment uses Windows Trusted Connection authentication. Ensure the appropriate ODBC driver is installed and the SQL Server instance is accessible.
+| Variable | Description | Example |
+|---|---|---|
+| `DB_SERVER` | SQL Server instance name | `localhost\SQLEXPRESS` |
+| `DB_NAME` | Database name | `PosEodPortfolio` |
+| `DB_DRIVER` | Installed ODBC driver | `ODBC Driver 18 for SQL Server` |
 
-Do not commit credentials, passwords, or sensitive connection details.
+Use `.env.example` as a reference for the required settings. The application does not automatically load `.env` files; the variables must be configured in your environment before running the dashboard.
+
+For Git Bash, set the variables with:
+
+```bash
+export DB_SERVER='localhost\SQLEXPRESS'
+export DB_NAME='PosEodPortfolio'
+export DB_DRIVER='ODBC Driver 18 for SQL Server'
+```
+
+Replace the example server name with your own SQL Server instance. The database, required tables, and views must already exist, and Windows Trusted Connection authentication must be configured.
+
+Do not commit `.env` files containing local settings or credentials.
 
 ### 5. Run the dashboard
 
